@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: thought-archive-live
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENALEX_API_KEY
+        sync: false
